@@ -1,0 +1,82 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p{
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+h2{
+    margin: 0;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+button{
+    background-color: rgb(255, 230, 205);
+    color:  rgb(180, 72, 0);
+    border: orange;
+    border-radius: 50px;
+    padding: 10px 15px;
+}
+
+button:active { /*ia me ensinou*/
+  transform: scale(0.97);
+}
+
+input{
+    background-color: rgb(255, 230, 205);
+    color: rgb(180, 72, 0);
+    border: orange;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+input::placeholder { /*ia me ensinou*/
+  color: rgb(180, 72, 0);  
+  opacity: 1;  /*ia disse que precisa para firefox*/
+}
+
+#mensagem{
+    color: red;
+}
+
+#mensagem2{
+    color: red;
+}
+
+
+.Saldo{
+    padding-top: 0;
+}
+
+.Caixinha{
+    padding-top: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 160px 1fr;
+    grid-template-columns: 400px;
+    justify-content: center;
+}
+
+.card{
+    padding: 10px;
+    margin: 15px;
+    background-color: white;
+    border: solid 2px;
+    border-color: rgb(185, 185, 185);
+    border-radius: 10px;
+}
+
+.small-button{
+    background-color: rgb(255, 116, 24);
+    color: white;
+    padding: 10px 15px;
+}
+
+.grey_text{
+    color: dimgray;
+}

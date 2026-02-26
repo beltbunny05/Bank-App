@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+        <p class="grey_text">Saldo</p>
+
+        <h2 id="valor" class="Saldo">--Valor--</h2>
+
+        <div>
+            <button>Pix</button>
+            <button>Pagar</button>
+            <button>Cartões</button>
+        </div>
+    
+        </div>
+            <div class="card">
+        <div>
+            <h2 class="Caixinha">Transferir para Caixinha</h2>
+            <p class="grey_text">Qual o valor da transferencia?</p>
+            <p id="poupanca">--Valor--</p>
+            <p id="mensagem"></p> 
+            <!-- essa é a mensagem de alerta -> sera escrita no arquivo js por isso é um <p> vazio -->
+        </div>
+        <div>
+            <input
+            type="number"
+            id="investimento"
+            placeholder="Valor"
+            min="0"
+            /> 
+            <!-- ia me ensinou a criar input -->
+            <button class="small-button" id="botao_transferencia">Enviar</button>
+        </div>
+        </div>
+        <!-- simulador de cdb abaixo -->
+        <div class="card"> 
+            <h2 class="Caixinha">Simulador de CDB</h2>
+            <p class="grey_text">Digite o valor que deseja investir mensalmente</p>
+            <p id="mensagem2"></p>
+            <input id="aporte" placeholder="Aporte mensal">
+            <button id="simular">Simular</button>
+            <p id="resultado2"></p>
+            
+        </div>
+    </div>
+<script type="module" src="JS Files/main.js"></script>
+</body>
+</html>
