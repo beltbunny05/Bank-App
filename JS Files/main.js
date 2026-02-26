@@ -17,7 +17,7 @@ function saldo() {
 
 saldo(); // chama a função saldo
  
-//agora preciso criar uma função que atualiza o saldo para subtrair o valor total que foi inserido no input
+// agora preciso criar uma função que atualiza o saldo para subtrair o valor total que foi inserido no input
 // ou seja: Pega valor do input
 // Subtrai do saldo
 // Soma na poupança
@@ -63,8 +63,6 @@ const botao = document.getElementById("botao_transferencia") //variavel para o b
 
 botao.onclick = transferir;
 
-//esse é o meu simulador de app de banco agora vou usar IA para me ajudar a criar um simulador de CDB para incentivar um usuario a guardar dinheiro na caixinha do banco dele
-
 const aporteInput = document.getElementById("aporte");
 const botaoSimular = document.getElementById("simular");
 const resultado = document.getElementById("resultado2");//coloquei resultado2 para diferenciar no html
@@ -106,4 +104,3 @@ function simular() {
 }
 
 botaoSimular.onclick = simular;
-//aqui acaba o codigo de simulador de CDB - relativamente simples mas com muitas coisas basicas de manipulação de documento do JS - aprendi bastante com ele em como as coisas funcionam
