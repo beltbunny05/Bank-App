@@ -1,18 +1,20 @@
 //Meu codigo para o mini app de banco - Não é um projeto complexo porém exigiu muito conhecimento que eu não tinha - usei o auxilio de IA em muita coisa porém não construi nada sem entender como você tinha dito - tanto é que talvez existam modos mais faceis de fazer o que fiz aqui
 //Não tenho a confiança de dizer que consegueria fazer tudo de cabeça mas toda parte do codigo eu entendo e sei onde vai cada coisa
-
-const valor = { 
-  saldo: 15000,
-  poupanca: 0
-};// variavel com dois valores distintos para eu usar mais tarde -> objeto com hashtable interna
-
+const state = {
+  usuario: null,
+  conta: {
+    saldo: 15000,
+    poupanca: 0
+  }
+};
+// variavel com dois valores distintos para eu usar mais tarde -> objeto com hashtable interna -> State é a regra universal agora
 const mensagem = document.getElementById("mensagem");//variavel de mensagem para erros - será usada na função
 const valor_conta = document.getElementById("valor");//valor_conta é igual ao id do documento html de id "valor"
 const valor_poupanca = document.getElementById("poupanca");//mesma coisa porem para a poupança
 
 function saldo() {
-  valor_conta.textContent = `R$ ${valor.saldo}`;
-  valor_poupanca.textContent = `Valor da Caixinha - R$ ${valor.poupanca}`;
+  valor_conta.textContent = `R$ ${state.conta.saldo}`;
+  valor_poupanca.textContent = `Valor da Caixinha - R$ ${state.conta.poupanca}`;
 }// função do saldo que faz ele funcionar - valor_conta que é o id "valor" no index.html - property set = texto "R$" + inserir a var valor(saldo = 2000) - substitui o valor de texto pelo novo definido aqui
 
 saldo(); // chama a função saldo
@@ -40,7 +42,7 @@ function transferir() {
     const numero = Number(investimento.value);
     //transforma o investimento.value (ex."100") que é uma string em um numero (100)
 
-    if (numero > valor.saldo){
+    if (numero > state.conta.saldo){
         mostrarMensagem("Saldo insuficiente");
         return;
     } //impedir numeros maiores que o saldo atual - se o valor da transferencia for maior q o valor autal do saldo ele impede e avisa
@@ -51,8 +53,8 @@ function transferir() {
     } // impedir numeros negativos - isso iria aumentar o valor do saldo e viraria um emprestimo
 
 
-    valor.saldo = valor.saldo - numero;
-    valor.poupanca = valor.poupanca + numero;
+    state.conta.saldo = state.conta.saldo - numero;
+    state.conta.poupanca = state.conta.poupanca + numero;
     //conta dos valores -- valor atual igual a valor atua +/- numero
 
 
@@ -81,7 +83,7 @@ function mostrarMensagem2(texto) { //nova função para a mensagem não sair no 
 function simular() {
   const aporte = Number(aporteInput.value);//string para numero - nova variavel aporte transforma o aporte input no valor real em numero facilitando muito
 
-  let total = valor.poupanca;//total é a partir do valor da caixinha(1)
+  let total = state.conta.poupanca;//total é a partir do valor da caixinha(1)
   let meses = 0;//contador de meses que começa em zero
 
   if (aporte <= 0) {
